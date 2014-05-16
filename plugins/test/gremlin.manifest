@@ -1,0 +1,8 @@
+asset do
+    master_task :CreateInfrastructure, 'CreateInfrastructure'
+    task        :AddIPtoHost,          'AddIPtoHost'
+    task        :ConfigureMachine,     'ConfigureMachine'
+    task        :CreateMachine,        'CreateMachine'
+    task        :CreateVm,             'CreateVM'
+    task        :PrepareDisk,          'PrepareDisk'
+end
