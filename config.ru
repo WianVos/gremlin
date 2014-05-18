@@ -1,6 +1,6 @@
 require 'gremlin'
 
-run Gremlin::Application
+run Gremlin::Server
 
 require 'dynflow/web_console'
 

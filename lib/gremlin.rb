@@ -10,9 +10,9 @@ require 'gremlin/version'
 
 module Gremlin
 
-  autoload :Application, 'gremlin/application'
   autoload :Mixins,      'gremlin/mixins'
-  autoload :Registry,     'gremlin/registry'
+  autoload :Server,      'gremlin/server'
+  autoload :Registry,    'gremlin/registry'
 
   extend Mixins::Dynflow_mixins
   extend Mixins::Register_mixins
