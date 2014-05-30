@@ -1,6 +1,8 @@
 require 'dynflow'
 require 'logger'
 require 'tmpdir'
+require 'yaml'
+require 'ostruct'
 
 require 'sinatra'
 require 'sinatra/json'
@@ -14,9 +16,11 @@ module Gremlin
   autoload :Server,      'gremlin/server'
   autoload :Registry,    'gremlin/registry'
 
+  extend Mixins::Config_mixins
   extend Mixins::Dynflow_mixins
   extend Mixins::Register_mixins
 
+  load_config
   load_plugins
 
 
