@@ -32,4 +32,5 @@ eos
   s.add_runtime_dependency('sqlite3')
   s.add_runtime_dependency('sequel', '4.1.0')
   s.add_runtime_dependency('pry')
+  s.add_runtime_dependency('fog')
 end

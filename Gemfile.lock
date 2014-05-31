@@ -4,6 +4,7 @@ PATH
     gremlin (0.0.1)
       daemons
       dynflow (= 0.6.2)
+      fog
       pry
       rack (= 1.5.2)
       sequel (= 4.1.0)
@@ -25,6 +26,7 @@ GEM
       activesupport
       rake
     backports (3.6.0)
+    builder (3.2.2)
     capybara (2.2.1)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -41,13 +43,35 @@ GEM
       apipie-params
       multi_json
       uuidtools
+    excon (0.34.0)
+    fog (1.22.0)
+      fog-brightbox
+      fog-core (~> 1.21, >= 1.21.1)
+      fog-json
+      nokogiri (~> 1.5, >= 1.5.11)
+    fog-brightbox (0.0.2)
+      fog-core
+      fog-json
+    fog-core (1.22.0)
+      builder
+      excon (~> 0.33)
+      formatador (~> 0.2)
+      mime-types
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+    fog-json (1.0.0)
+      multi_json (~> 1.0)
+    formatador (0.2.5)
     i18n (0.6.9)
     json (1.8.1)
     method_source (0.8.2)
     mime-types (2.2)
     mini_portile (0.6.0)
     minitest (5.3.4)
-    multi_json (1.10.0)
+    multi_json (1.10.1)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.9.1)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
     passenger (4.0.42)
@@ -90,9 +114,9 @@ GEM
       tilt (~> 1.3)
     slop (3.5.0)
     sqlite3 (1.3.9)
-    thread_safe (0.3.3)
+    thread_safe (0.3.4)
     tilt (1.4.1)
-    tzinfo (1.1.0)
+    tzinfo (1.2.0)
       thread_safe (~> 0.1)
     uuidtools (2.1.4)
     xpath (2.0.0)
