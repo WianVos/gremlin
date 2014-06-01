@@ -10,7 +10,7 @@ module Gremlin
        Gremlin.world.trigger ::CreateInfrastructure
     end
     get '/test1' do
-      Gremlin.world.trigger(EC2::CreateInfrastructure ,1 , 'ami-2918e35e', 'eu-west-1', 'm1.small', 'gremlin@xebia.com')
+      Gremlin.world.trigger(EC2::CreateInfrastructure ,4 , 'ami-2918e35e', 'eu-west-1', 'm1.small', 'gremlin@xebia.com')
     end
 
     get '/tasks' do

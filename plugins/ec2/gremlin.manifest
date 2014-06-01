@@ -1,0 +1,4 @@
+asset do
+    master_task :CreateEC2Infrastructure, 'EC2::CreateInfrastructure'
+
+end
