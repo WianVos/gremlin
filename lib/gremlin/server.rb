@@ -5,6 +5,8 @@ module Gremlin
      p Gremlin.world
     end
 
+    get '/config' do
+    end
 
     get '/test' do
        Gremlin.world.trigger ::CreateInfrastructure
