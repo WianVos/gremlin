@@ -22,7 +22,7 @@ module Gremlin
   extend Mixins::Dynflow_mixins
   extend Mixins::Register_mixins
 
-  load_config
+  config
   load_plugins
 
 

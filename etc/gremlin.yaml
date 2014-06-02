@@ -1,2 +1,4 @@
 ---
-percistance_adapter: sqlite
+global.percistance_adapter: sqlite
+vmware.global: 'global_vmware'
+vmware.blaat: 'non_yay'
