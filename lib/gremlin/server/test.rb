@@ -1,10 +1,11 @@
 module EC2
-  class Test < Sinatra::Application
+  class Server < Sinatra::Application
+
     namespace '/test' do
+
       get '/' do
         p Gremlin.world
       end
-
 
       get '/test' do
         Gremlin.world.trigger ::CreateInfrastructure

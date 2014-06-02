@@ -3,7 +3,9 @@ module Gremlin
 
     #include the various sinatra url resources
     # these are located under ./server
-    Dir.glob(File.join(File.dirname(__FILE__),'server/*.rb')).each {|r| load r }
+    Dir.glob(File.join(File.dirname(__FILE__),'server/*.rb')).each {|r|
+      p r
+      load r }
 
   end
 end

@@ -6,6 +6,7 @@ require 'ostruct'
 
 require 'sinatra'
 require 'sinatra/json'
+require 'sinatra/namespace'
 
 require 'gremlin/version'
 
