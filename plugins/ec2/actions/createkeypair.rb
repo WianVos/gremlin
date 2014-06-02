@@ -1,7 +1,7 @@
 require 'fog'
 
 module EC2
-  class CreateKeyPair < Dynflow::Action
+  class CreateKeyPair < Gremlin::Action
 
     input_format do
       param :region, string

@@ -1,9 +1,9 @@
 module Gremlin
   class Server < Sinatra::Application
 
-    get '/' do
-     p Gremlin.world
-    end
+    #include the various sinatra url resources
+    # these are located under ./server
+    Dir.glob(File.join(File.dirname(__FILE__),'server/*.rb')).each {|r| load r }
 
     get '/config' do
     end

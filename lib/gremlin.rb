@@ -15,7 +15,7 @@ module Gremlin
   autoload :Mixins,      'gremlin/mixins'
   autoload :Server,      'gremlin/server'
   autoload :Registry,    'gremlin/registry'
-  autoload :Daemon,      'gremlin/daemon'
+  autoload :Action,      'gremlin/action'
 
   extend Mixins::Config_mixins
   extend Mixins::Dynflow_mixins

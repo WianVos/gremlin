@@ -1,5 +1,5 @@
 module EC2
-  class CreateInfrastructure < Dynflow::Action
+  class CreateInfrastructure < Gremlin::Action
     extend EC2::Config
 
 

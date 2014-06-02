@@ -1,7 +1,7 @@
 require 'fog'
 
 module EC2
-  class CreateInstance < Dynflow::Action
+  class CreateInstance < Gremlin::Action
 
 
     input_format do
