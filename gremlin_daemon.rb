@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
 
-root_path    = File.expand_path(File.join(File.dirname(__FILE__), '..'))
-dynflow_path = File.join(root_path, 'lib')
-$LOAD_PATH << dynflow_path unless $LOAD_PATH.include? dynflow_path
+root_path    = File.expand_path(File.join(File.dirname(__FILE__), '.'))
+gremlin_path = File.join(root_path, 'lib')
+$LOAD_PATH << gremlin_path unless $LOAD_PATH.include? gremlin_path
 
 require 'dynflow'
+require 'gremlin'
 require 'tmpdir'
 
 socket              = File.join('/tmp', 'dynflow_socket')

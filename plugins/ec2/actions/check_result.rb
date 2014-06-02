@@ -1,5 +1,5 @@
 module EC2
-  class CheckResult < Dynflow::Action
+  class CheckResult < Gremlin::Action
 
     input_format do
       param :region, string
