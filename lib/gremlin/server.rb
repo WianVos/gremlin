@@ -1,20 +1,26 @@
+
 module Gremlin
   class Server < Sinatra::Application
 
     #include the various sinatra url resources
     # these are located under ./server
-    Dir.glob(File.join(File.dirname(__FILE__),'server/*.rb')).each {|r|
-      p r
-      load r }
+
 
     get '/config' do
     end
 
     get '/test' do
-       Gremlin.world.trigger ::CreateInfrastructure
+
+      test = Gremlin.world.plan(::CreateInfrastructure)
+
+
+      test2 = Gremlin.world.execute(test.id)
+
+
+      json test2
     end
     get '/test1' do
-      Gremlin.world.trigger(EC2::CreateInfrastructure ,4 , 'ami-2918e35e', 'eu-west-1', 'm1.small', 'gremlin@xebia.com')
+      Gremlin.world.trigger(EC2::CreateInfrastructure, hostcount: 2, type: 'm1.small')
     end
 
     get '/tasks' do
@@ -27,6 +33,13 @@ module Gremlin
                                                                            'state' => e.state,
                                                                            'result' => e.result }}
     end
+
+    get '/templates' do
+
+      json Gremlin::Registry.templates
+    end
+
+
   end
 end
 #

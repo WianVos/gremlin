@@ -1,3 +1,4 @@
+require 'pp'
 class CreateMachine < Dynflow::Action
 
   def plan(name, profile, config_options = {})
@@ -5,6 +6,9 @@ class CreateMachine < Dynflow::Action
     create_vm    = plan_action(CreateVM,
                                :name => name,
                                :disk => prepare_disk.output['path'])
+
+    pp create_vm.methods
+    pp create_vm.output.to_hash
     plan_action(AddIPtoHosts, :name => name, :ip => create_vm.output[:ip])
     plan_action(ConfigureMachine,
                 :ip => create_vm.output[:ip],
@@ -14,7 +18,7 @@ class CreateMachine < Dynflow::Action
   end
 
   def finalize
-    puts "We've create a machine #{input[:name]}"
+
   end
 
 end

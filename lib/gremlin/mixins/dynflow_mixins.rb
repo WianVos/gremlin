@@ -13,6 +13,9 @@ module Gremlin
               Dynflow::Executors::RemoteViaSocket.new(remote_world, socket)
             end)
 
+        @world.execute_planned_execution_plans
+
+        return @world
 
       end
 

@@ -1,7 +1,9 @@
-require 'fog'
+require_relative '../actions/ec2'
+
 
 module EC2
   class CreateInstance < Gremlin::Action
+    include EC2::Connection
 
 
     input_format do
@@ -9,6 +11,8 @@ module EC2
       param :region, string
       param :type, string
       param :key_pair_name, string
+      param :aws_access_key_id, string
+      param :aws_secret_access_key, string
     end
 
     output_format do
@@ -17,6 +21,7 @@ module EC2
     end
 
     def run
+      p input
       server = connection.servers.create(:imageid => input[:ami],
                                          :flavor_id => input[:type],
                                          :key_name  => input[:key_pair_name])
@@ -33,25 +38,8 @@ module EC2
 
     private
 
-    # setup a aws connection
-    def connection
-      # return if already setup
-      return @connection if @connection
 
-      @connection = Fog::Compute.new(
-            :provider              => 'AWS',
-            :region                => input[:region],
-            :aws_access_key_id     => aws_access_key_id,
-            :aws_secret_access_key => aws_secret_access_key )
 
-    end
 
-    private
-    def aws_access_key_id
-      'AKIAIDA6NLQQF7SEZMNQ'
-    end
-    def aws_secret_access_key
-      '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'
-    end
   end
 end

@@ -1,10 +1,14 @@
-require 'fog'
+require_relative '../actions/ec2'
 
 module EC2
   class CreateKeyPair < Gremlin::Action
 
+    include EC2::Connection
+
     input_format do
       param :region, string
+      param :aws_access_key_id, string
+      param :aws_secret_access_key, string
     end
 
     output_format do
@@ -14,6 +18,7 @@ module EC2
     end
 
     def run
+
       key_pair = connection.key_pairs.create(:name => key_pair_name )
 
       write_key_to_file(key_pair.private_key)
@@ -55,28 +60,12 @@ module EC2
      '/tmp'
     end
 
-    def connection
-      # return if already setup
-      return @connection if @connection
 
-      @connection = Fog::Compute.new(
-          :provider              => 'AWS',
-          :region                => input[:region],
-          :aws_access_key_id     => aws_access_key_id,
-          :aws_secret_access_key => aws_secret_access_key )
-
-    end
 
     def write_key_to_file(private_key)
       File.open(key_file, 'w') { |file| file.write(private_key) }
     end
 
-    def aws_access_key_id
-      'AKIAIDA6NLQQF7SEZMNQ'
-    end
-    def aws_secret_access_key
-      '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'
-    end
 
   end
 end

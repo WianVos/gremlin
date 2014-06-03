@@ -8,7 +8,12 @@ module EC2
       end
 
       get '/test' do
-        Gremlin.world.trigger ::CreateInfrastructure
+        p 'testing'
+       test = Gremlin.world.trigger(::CreateInfrastructure)
+       p test
+
+       p " testing "
+       json test
       end
       get '/test1' do
         Gremlin.world.trigger(EC2::CreateInfrastructure ,2 , 'ami-2918e35e', 'eu-west-1', 'm1.small', 'gremlin@xebia.com')
@@ -29,6 +34,11 @@ module EC2
                                                                               'result' => e.result }}
       end
 
+      get '/order' do
+        order = Gremlin.Order.new('test', 'test')
+        p order
+        p Gremlin.Order.all
+      end
     end
   end
 end

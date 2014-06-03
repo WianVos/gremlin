@@ -28,6 +28,7 @@ module Gremlin
 
           global = YAML.load(File.read("#{app_root}/etc/gremlin.yaml"))
           global.each do |key,val|
+
             globalconfig[key] = val
           end
 
@@ -38,6 +39,7 @@ module Gremlin
             #pluginname = Pathname.new(File.expand_path("../.",pluginfile)).basename.to_s
             pluginhash = YAML.load(File.read(pluginfile))
             pluginhash.each do |key,val|
+
               pluginconfig[key] = val
             end
           end

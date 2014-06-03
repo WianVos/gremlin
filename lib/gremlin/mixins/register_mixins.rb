@@ -25,7 +25,7 @@ module Gremlin
         manifest_files = Dir.glob(manifest_glob)
         library_files  = Dir.glob(lib_glob)
 
-        manifest_files.each {|file| module_eval File.read(file) }
+        #manifest_files.each {|file| module_eval File.read(file) }
         library_files.each {|file| p file ; require file}
       end
 

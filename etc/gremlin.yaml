@@ -2,3 +2,10 @@
 global.percistance_adapter: sqlite
 vmware.global: 'global_vmware'
 vmware.blaat: 'non_yay'
+EC2::CreateInfrastructure:
+  ami: 'ami-2918e35e'
+  region: 'eu-west-1'
+  aws_access_key_id: 'AKIAIDA6NLQQF7SEZMNQ'
+  aws_secret_access_key: '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'
+  mock: true
+
