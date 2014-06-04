@@ -18,6 +18,7 @@ module Gremlin
   autoload :Registry,    'gremlin/registry'
   autoload :Action,      'gremlin/action'
   autoload :Template,    'gremlin/template'
+  autoload :Job,         'gremlin/job'
 
 
   extend Mixins::Config_mixins

@@ -21,7 +21,6 @@ module EC2
     end
 
     def run
-      p input
       server = connection.servers.create(:imageid => input[:ami],
                                          :flavor_id => input[:type],
                                          :key_name  => input[:key_pair_name])

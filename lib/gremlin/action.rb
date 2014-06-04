@@ -1,11 +1,9 @@
 module Gremlin
   class Action < Dynflow::Action
 
-    def inherited
-      super
+    def self.inherited(child)
+      super(child)
     end
-
-
 
   end
 end

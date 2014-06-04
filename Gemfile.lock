@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     gremlin (0.0.1)
+      algebrick
       daemons
       dynflow (= 0.6.2)
       fog

@@ -20,19 +20,11 @@ module Gremlin
 
       #class methods
 
-      def all
-        # return listing of project objects
-        self.templates ? self.templates.dup : []
-      end
-
-      def count
-        # return a count of existing orders
-        templates ? templates.count : 0
-      end
-
+      # register required parameters with the gremlin registry
       def required_parameter(name, type = string)
         Gremlin::Registry.template_parameter(self.name, name, type)
       end
+
     end
 
     # instance methods
@@ -45,7 +37,6 @@ module Gremlin
     end
 
     def merged_args(args)
-      p args.first.merge!(config) if args.first && config
       args.first.merge!(config) if args.first && config
     end
   end

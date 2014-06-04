@@ -33,4 +33,5 @@ eos
   s.add_runtime_dependency('sequel', '4.1.0')
   s.add_runtime_dependency('pry')
   s.add_runtime_dependency('fog')
+  s.add_runtime_dependency('algebrick')
 end

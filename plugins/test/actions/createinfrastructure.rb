@@ -1,6 +1,10 @@
-class CreateInfrastructure < Dynflow::Action
+class CreateInfrastructure < Gremlin::Template
 
-  def plan
+  def plan (*args)
+
+    #merge the arguments we've gotten with the config
+    # we'll add to this has as we go and pass the args hash to the various plan_action methods
+    args = merged_args(args)
     sequence do
       concurrence do
         plan_action(CreateMachine, 'host1', 'db')

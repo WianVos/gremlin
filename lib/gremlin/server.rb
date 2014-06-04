@@ -23,6 +23,12 @@ module Gremlin
       Gremlin.world.trigger(EC2::CreateInfrastructure, hostcount: 2, type: 'm1.small')
     end
 
+    get '/logger' do
+     Gremlin.logger.error "testing"
+     json Gremlin.logger.methods
+
+    end
+
     get '/tasks' do
       json Gremlin::Registry.tasks
     end
@@ -40,12 +46,26 @@ module Gremlin
     end
 
 
+    get '/job' do
+
+      job = Gremlin::Job.new(:template => 'CreateInfrastructure', :user => 'wian')
+
+      job.plan
+
+
+
+      job.execute
+
+      pp job.flow_hash
+      sleep 10
+      pp job.flow_hash
+      json job.flow_hash
+
+    end
+
+    get '/jobs' do
+      json Gremlin::Job.all_to_hash
+    end
+
   end
 end
-#
-# <td><%= h(plan.id) %></td>
-#     <td><%= h(plan.root_plan_step.action_class.name) %></td>
-#     <th><%= h(plan.state) %></th>
-# <th><%= h(plan.result) %></th>
-#     <th><%= h(plan.started_at) %></th>
-#     <td><a href="<%= h(url("/#{plan.id}")) %>">Show</a></td>

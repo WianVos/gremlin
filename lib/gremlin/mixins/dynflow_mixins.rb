@@ -22,7 +22,7 @@ module Gremlin
 
 
       def persistance
-        return world.persistance
+        return world.persistence
       end
 
       def socket
@@ -39,6 +39,10 @@ module Gremlin
 
       def lock_file
         File.join('/tmp', 'dynflow_executor.lock')
+      end
+
+      def logger
+        world.logger
       end
 
     end

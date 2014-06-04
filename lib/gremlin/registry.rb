@@ -16,15 +16,16 @@ module Gremlin
     end
 
     def template(template_name)
-      p template_name
       @templates = Hash.new unless @templates
       @templates[template_name] = Hash.new unless @templates[template_name]
     end
 
     def template_parameter(template_name, name, type)
       template(template_name)
-      @templates[template_name][name] = type
+      @templates[template_name]['required_parameters'] ||= Hash.new
+      @templates[template_name]['required_parameters'][name] = type
     end
+
 
    end
   end
