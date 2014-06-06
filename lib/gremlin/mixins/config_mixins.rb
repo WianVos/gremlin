@@ -43,12 +43,9 @@ module Gremlin
               pluginconfig[key] = val
             end
           end
-          #config['plugins'] = plugins
-          #configstruct = OpenStruct.new(config)
-          #config
-          #@config
+
           @config = pluginconfig.merge(globalconfig)
-          puts @config
+
           return @config
       end
 
