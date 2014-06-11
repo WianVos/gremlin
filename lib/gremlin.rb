@@ -3,6 +3,7 @@ require 'logger'
 require 'tmpdir'
 require 'yaml'
 require 'ostruct'
+require 'rufus-scheduler'
 
 require 'sinatra'
 require 'sinatra/json'
@@ -24,6 +25,8 @@ module Gremlin
   extend Mixins::Config_mixins
   extend Mixins::Dynflow_mixins
   extend Mixins::Register_mixins
+  extend Mixins::Scheduler_mixins
+
 
   config
   load_plugins

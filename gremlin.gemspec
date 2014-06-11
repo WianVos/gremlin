@@ -35,4 +35,9 @@ eos
   s.add_runtime_dependency('pry')
   s.add_runtime_dependency('fog')
   s.add_runtime_dependency('algebrick')
+  s.add_runtime_dependency('rufus-scheduler', '3.0.6')
+  s.add_runtime_dependency('thin')
+  s.add_runtime_dependency('activerecord')
+  
+
 end

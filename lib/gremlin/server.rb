@@ -48,11 +48,7 @@ module Gremlin
 
     get '/job' do
 
-      job = Gremlin::Job.new(:template => 'CreateInfrastructure', :user => 'wian')
-
-      job.plan
-
-
+      job = Gremlin::Job.new(:template => 'CreateInfrastructure', :user => 'wian', :schedule => 'in:15s')
 
       job.execute
 
