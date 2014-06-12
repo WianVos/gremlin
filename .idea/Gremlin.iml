@@ -51,9 +51,12 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="RVM: ruby-2.1.1 [gremlin]" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="activemodel (v4.1.1, RVM: ruby-2.1.1 [gremlin]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activerecord (v4.1.1, RVM: ruby-2.1.1 [gremlin]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.1.1, RVM: ruby-2.1.1 [gremlin]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="algebrick (v0.4.0, RVM: ruby-2.1.1 [gremlin]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="apipie-params (v0.0.3, RVM: ruby-2.1.1 [gremlin]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="arel (v5.0.1.20140414130214, RVM: ruby-2.1.1 [gremlin]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="backports (v3.6.0, RVM: ruby-2.1.1 [gremlin]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.1.1 [gremlin]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.6.1, RVM: ruby-2.1.1 [gremlin]) [gem]" level="application" />

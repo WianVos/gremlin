@@ -1,5 +1,5 @@
 module Gremlin
-  class Job
+  class Job < Serializable
     module Plan
       # plan stuff
 

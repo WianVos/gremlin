@@ -48,18 +48,16 @@ module Gremlin
 
     get '/job' do
 
-      job = Gremlin::Job.new(:template => 'CreateInfrastructure', :user => 'wian', :schedule => 'in:15s')
+      job = Gremlin::Job.new(:template => 'CreateInfrastructure', :user => 'wian', :schedule => 'in:15s', :args => {test1: 'test', test2: 'test2'})
 
       job.execute
 
-      pp job.flow_hash
-      sleep 10
-      pp job.flow_hash
       json job.flow_hash
 
     end
 
     get '/jobs' do
+      Gremlin::Job.update_all
       json Gremlin::Job.all_to_hash
     end
 

@@ -14,13 +14,15 @@ require 'gremlin/version'
 
 module Gremlin
 
-  autoload :Mixins,      'gremlin/mixins'
-  autoload :Server,      'gremlin/server'
-  autoload :Registry,    'gremlin/registry'
-  autoload :Action,      'gremlin/action'
-  autoload :Template,    'gremlin/template'
-  autoload :Job,         'gremlin/job'
-
+  autoload :Mixins,               'gremlin/mixins'
+  autoload :Server,               'gremlin/server'
+  autoload :Registry,             'gremlin/registry'
+  autoload :Action,               'gremlin/action'
+  autoload :Template,             'gremlin/template'
+  autoload :Job,                  'gremlin/job'
+  autoload :Persistence,          'gremlin/persistence'
+  autoload :PersistenceAdapters,  'gremlin/persistence_adapters'
+  autoload :Serializable,         'gremlin/serializable'
 
   extend Mixins::Config_mixins
   extend Mixins::Dynflow_mixins
@@ -31,6 +33,6 @@ module Gremlin
   config
   load_plugins
 
-
+  gremlin_job_init
 
 end

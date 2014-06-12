@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     gremlin (0.0.1)
+      activerecord
       algebrick
       daemons
       dynflow (= 0.6.2)
@@ -18,6 +19,13 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
+    activemodel (4.1.1)
+      activesupport (= 4.1.1)
+      builder (~> 3.1)
+    activerecord (4.1.1)
+      activemodel (= 4.1.1)
+      activesupport (= 4.1.1)
+      arel (~> 5.0.0)
     activesupport (4.1.1)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
@@ -28,6 +36,7 @@ GEM
     apipie-params (0.0.3)
       activesupport
       rake
+    arel (5.0.1.20140414130214)
     backports (3.6.0)
     builder (3.2.2)
     capybara (2.2.1)

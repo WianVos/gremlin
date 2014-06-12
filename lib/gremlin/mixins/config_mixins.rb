@@ -49,6 +49,18 @@ module Gremlin
           return @config
       end
 
+      def gremlin_persistence
+        return @gremlin_persistence if @gremlin_persistence
+
+        @gremlin_persistence = Gremlin::Persistence.new(Gremlin::PersistenceAdapters::Sequel.new('sqlite://db.sqlite'))
+
+      end
+
+      def gremlin_job_init
+        Gremlin::Job.init
+      end
+
+
     end
   end
 end

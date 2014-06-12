@@ -1,5 +1,5 @@
 module Gremlin
-  class Job
+  class Job < Serializable
     module Flow
       # flow stuff
       def flow_hash(flow = run_flow)
